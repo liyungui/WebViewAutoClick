@@ -1,21 +1,21 @@
 package com.xuehu365.webviewautoclick;
 
+import android.app.Activity;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends Activity {
 
     private static final String[] DOM_IDS = {"link"};// 需要操作的dom元素id
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        WebView webView = (WebView) findViewById(R.id.webview);
+
+        WebView webView = new WebView(this);
 
         WebSettings settings = webView.getSettings();
         settings.setJavaScriptEnabled(true);
